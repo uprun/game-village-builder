@@ -14,6 +14,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity.y -= 9.8 * delta
 	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity.x = 0
+	velocity.z = 0
 	if is_on_floor():
 		if jumpCountLeft > 0:
 			jumpCountLeft -= 1
