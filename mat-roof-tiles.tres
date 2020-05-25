@@ -1,0 +1,22 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://RoofingTiles004_2K-JPG/RoofingTiles004_2K_Color.jpg" type="Texture" id=1]
+[ext_resource path="res://RoofingTiles004_2K-JPG/RoofingTiles004_2K_Displacement.jpg" type="Texture" id=2]
+[ext_resource path="res://RoofingTiles004_2K-JPG/RoofingTiles004_2K_Normal.jpg" type="Texture" id=3]
+[ext_resource path="res://RoofingTiles004_2K-JPG/RoofingTiles004_2K_Roughness.jpg" type="Texture" id=4]
+
+[resource]
+albedo_color = Color( 0.0509804, 0.403922, 0.94902, 1 )
+albedo_texture = ExtResource( 1 )
+roughness_texture = ExtResource( 4 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 3 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 2 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
