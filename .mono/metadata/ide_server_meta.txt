@@ -1,2 +1,2 @@
-﻿45655
-/home/uprun/IDEs/Godot_v3.2.1/Godot
+﻿35579
+/home/uprun/IDEs/Godot_v3.2.1-mono/Godot
