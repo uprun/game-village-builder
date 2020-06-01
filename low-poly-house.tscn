@@ -1,0 +1,547 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://low-poly-wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://low-poly-color-pallete/low-poly-white-2.material" type="Material" id=2]
+[ext_resource path="res://low-poly-color-pallete/low-poly-lillac-1.material" type="Material" id=3]
+[ext_resource path="res://low-poly-color-pallete/low-poly-red-bark.material" type="Material" id=4]
+[ext_resource path="res://low-poly-color-pallete/low-poly-gray-1.material" type="Material" id=5]
+[ext_resource path="res://low-poly-house-build-process.gd" type="Script" id=6]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 2 )
+size = Vector3( 7.5, 0.159, 4.2 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 1, 2, 0.2 )
+
+[sub_resource type="CubeMesh" id=3]
+material = ExtResource( 4 )
+size = Vector3( 1, 0.05, 0.4 )
+
+[sub_resource type="CubeMesh" id=4]
+material = ExtResource( 5 )
+size = Vector3( 4, 0.159, 4 )
+
+[sub_resource type="CubeMesh" id=5]
+material = ExtResource( 5 )
+size = Vector3( 0.4, 0.159, 2 )
+
+[node name="low-poly-house" type="Spatial"]
+
+[node name="concrete-ground" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00825854, 1.7 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 6 )
+
+[node name="concrete-ground2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00825854, -1.8 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 6 )
+
+[node name="wall-group2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.1 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 1.0
+
+[node name="low-poly-wall14" parent="wall-group2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -3.3853 )
+
+[node name="low-poly-wall13" parent="wall-group2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3.3853 )
+
+[node name="low-poly-wall12" parent="wall-group2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3.3853 )
+
+[node name="low-poly-wall11" parent="wall-group2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3.3853 )
+
+[node name="low-poly-wall10" parent="wall-group2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3.3853 )
+
+[node name="low-poly-wall9" parent="wall-group2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -3.3853 )
+
+[node name="low-poly-wall8" parent="wall-group2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -3.3853 )
+
+[node name="wall-group4" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.1, 0.4, -9.68575e-08 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 1.2
+
+[node name="low-poly-wall8" parent="wall-group4" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 3.4147 )
+
+[node name="low-poly-wall6" parent="wall-group4" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 3.4147 )
+
+[node name="low-poly-wall7" parent="wall-group4" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 3.4147 )
+
+[node name="low-poly-wall2" parent="wall-group4" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.4147 )
+
+[node name="low-poly-wall3" parent="wall-group4" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 3.4147 )
+
+[node name="low-poly-wall4" parent="wall-group4" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 3.4147 )
+
+[node name="low-poly-wall5" parent="wall-group4" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3.4147 )
+
+[node name="wall-group3" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0.1 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 1.4
+
+[node name="low-poly-wall" parent="wall-group3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 3.4147 )
+
+[node name="low-poly-wall6" parent="wall-group3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 3.4147 )
+
+[node name="low-poly-wall7" parent="wall-group3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 3.4147 )
+
+[node name="low-poly-wall2" parent="wall-group3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.4147 )
+
+[node name="low-poly-wall3" parent="wall-group3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 3.4147 )
+
+[node name="low-poly-wall4" parent="wall-group3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 3.4147 )
+
+[node name="low-poly-wall5" parent="wall-group3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3.4147 )
+
+[node name="wall-group" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 5.6
+
+[node name="low-poly-wall21" parent="wall-group" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, -0.985298 )
+
+[node name="low-poly-wall20" parent="wall-group" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, -1.9853 )
+
+[node name="low-poly-wall19" parent="wall-group" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, -2.9853 )
+
+[node name="low-poly-wall18" parent="wall-group" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, 0.014702 )
+
+[node name="low-poly-wall17" parent="wall-group" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, 1.0147 )
+
+[node name="low-poly-wall16" parent="wall-group" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, 2.0147 )
+
+[node name="low-poly-wall15" parent="wall-group" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, 3.0147 )
+
+[node name="toilet" type="Spatial" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.9853, 1.4, 1 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 1.6
+
+[node name="low-poly-wall" parent="toilet" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="low-poly-wall2" parent="toilet" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7, 0, -0.5 )
+
+[node name="low-poly-wall4" parent="toilet" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7, 0, -1.4 )
+
+[node name="low-poly-wall5" parent="toilet" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7, 0, -2 )
+
+[node name="inner-wall" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.2853, 1.4, -1 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 1.6
+
+[node name="low-poly-wall3" parent="inner-wall" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, 0, 1.19209e-07 )
+
+[node name="low-poly-wall6" parent="inner-wall" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, 1.19209e-07 )
+
+[node name="low-poly-wall7" parent="inner-wall" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="door" type="MeshInstance" parent="."]
+transform = Transform( -5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 3.5, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 3 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -2, 0 )
+show_and_animate_after_seconds = 5.6
+
+[node name="stairs-150-cm2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.3, -0.9 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -1.5, 0 )
+show_and_animate_after_seconds = 2.6
+
+[node name="step" type="MeshInstance" parent="stairs-150-cm2"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step3" type="MeshInstance" parent="stairs-150-cm2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.3 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step4" type="MeshInstance" parent="stairs-150-cm2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.6 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step5" type="MeshInstance" parent="stairs-150-cm2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.9 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step6" type="MeshInstance" parent="stairs-150-cm2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -1.2 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step7" type="MeshInstance" parent="stairs-150-cm2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.5 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step9" type="MeshInstance" parent="stairs-150-cm2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -1.8 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="stairs platform" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -3 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -1.5, 0 )
+show_and_animate_after_seconds = 2.6
+
+[node name="step8" type="MeshInstance" parent="stairs platform"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step19" type="MeshInstance" parent="stairs platform"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step20" type="MeshInstance" parent="stairs platform"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0.4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step23" type="MeshInstance" parent="stairs platform"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step22" type="MeshInstance" parent="stairs platform"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, 0.4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step10" type="MeshInstance" parent="stairs platform"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step18" type="MeshInstance" parent="stairs platform"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -0.3 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step21" type="MeshInstance" parent="stairs platform"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, -0.3 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="stairs-150-cm" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -1.5, 0 )
+show_and_animate_after_seconds = 3.6
+
+[node name="step17" type="MeshInstance" parent="stairs-150-cm"]
+transform = Transform( -1, 0, -9.68575e-08, 0, 1, 0, 9.68575e-08, 0, -1, 1.9, 1.7, -2.3 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step16" type="MeshInstance" parent="stairs-150-cm"]
+transform = Transform( -1, 0, -9.68575e-08, 0, 1, 0, 9.68575e-08, 0, -1, 1.9, 1.9, -2 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step15" type="MeshInstance" parent="stairs-150-cm"]
+transform = Transform( -1, 0, -9.68575e-08, 0, 1, 0, 9.68575e-08, 0, -1, 1.9, 2.1, -1.7 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step14" type="MeshInstance" parent="stairs-150-cm"]
+transform = Transform( -1, 0, -9.68575e-08, 0, 1, 0, 9.68575e-08, 0, -1, 1.9, 2.3, -1.4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step13" type="MeshInstance" parent="stairs-150-cm"]
+transform = Transform( -1, 0, -9.68575e-08, 0, 1, 0, 9.68575e-08, 0, -1, 1.9, 2.5, -1.1 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step12" type="MeshInstance" parent="stairs-150-cm"]
+transform = Transform( -1, 0, -9.68575e-08, 0, 1, 0, 9.68575e-08, 0, -1, 1.9, 2.7, -0.8 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="step11" type="MeshInstance" parent="stairs-150-cm"]
+transform = Transform( -1, 0, -9.68575e-08, 0, 1, 0, 9.68575e-08, 0, -1, 1.9, 2.9, -0.5 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="second-floor2" type="Spatial" parent="."]
+script = ExtResource( 6 )
+progress_per_second = 1005.0
+show_and_animate_after_seconds = 6.6
+
+[node name="second-floor" type="Spatial" parent="second-floor2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50432, 2.84539, -2.85795 )
+script = ExtResource( 6 )
+progress_per_second = 1006.0
+show_and_animate_after_seconds = 7.3
+
+[node name="MeshInstance" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75278, -0.000377893, 1.03374 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.81009, -0.000377893, 1.13374 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance15" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36491, -0.000377893, 4.53374 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance16" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76491, -0.000377893, 4.69192 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16446, 0, 1.56499 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14118, 0, 4.56499 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16446, 0, 0.164992 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.36314, 0, -0.803938 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.36569, 0, -0.803938 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.41379, 0, -0.803938 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.953436, 0, -0.803938 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance14" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.33787, 0, 6.49606 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance13" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.36569, 0, 6.49606 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.41379, 0, 6.49606 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="second-floor2/second-floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.953436, 0, 6.49606 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="second-floor2/second-floor"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="wall-group-second-floor" type="Spatial" parent="second-floor2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 9.7
+
+[node name="low-poly-wall21" parent="second-floor2/wall-group-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, -0.985298 )
+
+[node name="low-poly-wall20" parent="second-floor2/wall-group-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, -1.9853 )
+
+[node name="low-poly-wall19" parent="second-floor2/wall-group-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, -2.9853 )
+
+[node name="low-poly-wall18" parent="second-floor2/wall-group-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, 0.014702 )
+
+[node name="low-poly-wall17" parent="second-floor2/wall-group-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, 1.0147 )
+
+[node name="low-poly-wall16" parent="second-floor2/wall-group-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, 2.0147 )
+
+[node name="low-poly-wall15" parent="second-floor2/wall-group-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, 3.0147 )
+
+[node name="toilet2-second-floor" type="Spatial" parent="second-floor2"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.9853, 4.38804, 1 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 8.7
+
+[node name="low-poly-wall" parent="second-floor2/toilet2-second-floor" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="low-poly-wall2" parent="second-floor2/toilet2-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7, 0, -0.5 )
+
+[node name="low-poly-wall4" parent="second-floor2/toilet2-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7, 0, -1.4 )
+
+[node name="low-poly-wall5" parent="second-floor2/toilet2-second-floor" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7, 0, -2 )
+
+[node name="wall-group7" type="Spatial" parent="second-floor2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, -0.1 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 7.7
+
+[node name="low-poly-wall14" parent="second-floor2/wall-group7" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -3.3853 )
+
+[node name="low-poly-wall13" parent="second-floor2/wall-group7" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3.3853 )
+
+[node name="low-poly-wall12" parent="second-floor2/wall-group7" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3.3853 )
+
+[node name="low-poly-wall11" parent="second-floor2/wall-group7" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3.3853 )
+
+[node name="low-poly-wall10" parent="second-floor2/wall-group7" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3.3853 )
+
+[node name="low-poly-wall9" parent="second-floor2/wall-group7" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -3.3853 )
+
+[node name="low-poly-wall8" parent="second-floor2/wall-group7" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -3.3853 )
+
+[node name="wall-group6" type="Spatial" parent="second-floor2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0.1 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 7.7
+
+[node name="low-poly-wall" parent="second-floor2/wall-group6" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 3.4147 )
+
+[node name="low-poly-wall6" parent="second-floor2/wall-group6" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 3.4147 )
+
+[node name="low-poly-wall7" parent="second-floor2/wall-group6" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 3.4147 )
+
+[node name="low-poly-wall2" parent="second-floor2/wall-group6" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.4147 )
+
+[node name="low-poly-wall3" parent="second-floor2/wall-group6" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 3.4147 )
+
+[node name="low-poly-wall4" parent="second-floor2/wall-group6" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 3.4147 )
+
+[node name="low-poly-wall5" parent="second-floor2/wall-group6" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3.4147 )
+
+[node name="wall-group5" type="Spatial" parent="second-floor2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.1, 3.4, -9.68575e-08 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 7.7
+
+[node name="low-poly-wall8" parent="second-floor2/wall-group5" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 3.4147 )
+
+[node name="low-poly-wall6" parent="second-floor2/wall-group5" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 3.4147 )
+
+[node name="low-poly-wall7" parent="second-floor2/wall-group5" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 3.4147 )
+
+[node name="low-poly-wall2" parent="second-floor2/wall-group5" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.4147 )
+
+[node name="low-poly-wall3" parent="second-floor2/wall-group5" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 3.4147 )
+
+[node name="low-poly-wall4" parent="second-floor2/wall-group5" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 3.4147 )
+
+[node name="low-poly-wall5" parent="second-floor2/wall-group5" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3.4147 )
+
+[node name="inner-wall2" type="Spatial" parent="second-floor2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.2853, 4.4, -1 )
+script = ExtResource( 6 )
+start_from_translation = Vector3( 0, -3, 0 )
+show_and_animate_after_seconds = 8.7
+
+[node name="low-poly-wall3" parent="second-floor2/inner-wall2" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, 0, 2.38419e-07 )
+
+[node name="low-poly-wall6" parent="second-floor2/inner-wall2" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, 1.19209e-07 )
+
+[node name="low-poly-wall7" parent="second-floor2/inner-wall2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

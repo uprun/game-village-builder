@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://mat-roof-tiles.tres" type="Material" id=1]
-[ext_resource path="res://mat-briks.tres" type="Material" id=2]
+[ext_resource path="res://materials-other/mat-roof-tiles.tres" type="Material" id=1]
+[ext_resource path="res://materials-other/mat-briks.tres" type="Material" id=2]
 [ext_resource path="res://house.gd" type="Script" id=3]
 
 [sub_resource type="CubeMesh" id=1]

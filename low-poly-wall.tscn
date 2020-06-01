@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://low-poly-color-pallete/low-poly-brown-3.material" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 1, 3, 0.1 )
+
+[node name="low-poly-wall" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 3 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
