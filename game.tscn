@@ -1,17 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ground2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://grass-bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://house.tscn" type="PackedScene" id=3]
-[ext_resource path="res://low-poly-wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://low-poly-house-attempt-1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tree.tscn" type="PackedScene" id=5]
 [ext_resource path="res://DirectionalLight.tscn" type="PackedScene" id=6]
-[ext_resource path="res://low-poly-house.tscn" type="PackedScene" id=7]
+[ext_resource path="res://low-poly-road.tscn" type="PackedScene" id=7]
+[ext_resource path="res://low-poly-road-x-junction.tscn" type="PackedScene" id=8]
 
 [node name="game" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.258819, -0.683013, 0.683013, 0, 0.707107, 0.707107, -0.965926, 0.183013, -0.183013, 19.4201, 12.0298, -4.6032 )
+transform = Transform( -0.5, -0.612373, 0.612372, 0, 0.707107, 0.707107, -0.866026, 0.353553, -0.353553, 12.4201, 9.0298, -4.6032 )
 
 [node name="ground2" parent="." instance=ExtResource( 1 )]
 
@@ -39,13 +40,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
 [node name="ground5" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20 )
 
-[node name="grass-bush" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.0298228, 4 )
-
-[node name="grass-bush2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9465, 0.0298223, 6.77442 )
-
 [node name="DirectionalLight" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.965926, 0.210751, -0.150238, 0, 0.580475, 0.814278, 0.258819, 0.786532, -0.560696, 0, 6.43766, 3 )
 light_specular = 0.42
 shadow_bias = 0.01
 directional_shadow_split_1 = 0.0
@@ -57,10 +53,10 @@ directional_shadow_depth_range = 1
 directional_shadow_max_distance = 156.2
 
 [node name="house" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 14.9 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4, 0, 14.9 )
 
 [node name="house2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 19.9 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4, 0, 19.9 )
 
 [node name="tree000" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.0517638, 0, 0.193185, 0, 0.2, 0, -0.193185, 0, 0.0517638, 15, 0.00659752, 0 )
@@ -69,7 +65,7 @@ transform = Transform( 0.0517638, 0, 0.193185, 0, 0.2, 0, -0.193185, 0, 0.051763
 transform = Transform( 0.173205, 0, -0.1, 0, 0.2, 0, 0.1, 0, 0.173205, 9, 0.00659752, 8 )
 
 [node name="tree001" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.196962, 0, -0.0347296, 0, 0.2, 0, 0.0347296, 0, 0.196962, 1, 0, 1 )
+transform = Transform( 0.196962, 0, -0.0347296, 0, 0.2, 0, 0.0347296, 0, 0.196962, -5, 0, 6 )
 
 [node name="tree003" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.196962, 0, -0.0347296, 0, 0.2, 0, 0.0347296, 0, 0.196962, -4, 0, -10 )
@@ -77,14 +73,8 @@ transform = Transform( 0.196962, 0, -0.0347296, 0, 0.2, 0, 0.0347296, 0, 0.19696
 [node name="tree004" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.196962, 0, -0.0347296, 0, 0.2, 0, 0.0347296, 0, 0.196962, 7, 0, -14 )
 
-[node name="low-poly-house" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
-
-[node name="low-poly-wall" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1.4, 2 )
-visible = false
-
 [node name="grass-global" type="Spatial" parent="."]
+transform = Transform( 0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, 6.1, 0, 0 )
 
 [node name="grass-bush3" parent="grass-global" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59529, 0.0298214, 4.43643 )
@@ -157,3 +147,33 @@ transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -0.802137
 
 [node name="grass-bush23" parent="grass-global" instance=ExtResource( 2 )]
 transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -0.802137, 0.0298223, -5.47618 )
+
+[node name="grass-bush" parent="grass-global" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.0298228, 4 )
+
+[node name="grass-bush2" parent="grass-global" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5535, 0.0298223, 6.77442 )
+
+[node name="low-poly-house-attempt-1" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11, 0, 1 )
+
+[node name="low-poly-road" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 6 )
+
+[node name="low-poly-road2" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 24 )
+
+[node name="low-poly-road3" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 17 )
+
+[node name="low-poly-road6" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -25 )
+
+[node name="low-poly-road5" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -15 )
+
+[node name="low-poly-road4" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -5 )
+
+[node name="low-poly-road-x-junction" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14 )

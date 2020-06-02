@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://low-poly-wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://low-poly-color-pallete/low-poly-white-2.material" type="Material" id=2]
@@ -6,10 +6,15 @@
 [ext_resource path="res://low-poly-color-pallete/low-poly-red-bark.material" type="Material" id=4]
 [ext_resource path="res://low-poly-color-pallete/low-poly-gray-1.material" type="Material" id=5]
 [ext_resource path="res://low-poly-house-build-process.gd" type="Script" id=6]
+[ext_resource path="res://low-poly-color-pallete/low-poly-blue-3.material" type="Material" id=7]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 2 )
 size = Vector3( 7.5, 0.159, 4.2 )
+
+[sub_resource type="CubeMesh" id=6]
+material = ExtResource( 7 )
+size = Vector3( 0.7, 1, 0.2 )
 
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 1, 2, 0.2 )
@@ -120,6 +125,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 3.4147 )
 
 [node name="low-poly-wall5" parent="wall-group3" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3.4147 )
+
+[node name="window" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.51605, 2.1, -1.5 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window3" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.68395, 1.5, 3.5 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window4" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.68395, 1.5, -3.5 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window5" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.38395, 1.5, -1.5 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window6" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.38395, 1.5, 1.6 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51605, 2.2, -3.5 )
+mesh = SubResource( 6 )
+material/0 = null
 
 [node name="wall-group" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0 )
@@ -320,88 +355,93 @@ script = ExtResource( 6 )
 progress_per_second = 1005.0
 show_and_animate_after_seconds = 6.6
 
-[node name="second-floor" type="Spatial" parent="second-floor2"]
+[node name="second-floor-ground" type="Spatial" parent="second-floor2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50432, 2.84539, -2.85795 )
 script = ExtResource( 6 )
 progress_per_second = 1006.0
 show_and_animate_after_seconds = 7.3
 
-[node name="MeshInstance" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75278, -0.000377893, 1.03374 )
 mesh = SubResource( 4 )
 material/0 = null
 
-[node name="MeshInstance2" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance2" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.81009, -0.000377893, 1.13374 )
 mesh = SubResource( 4 )
 material/0 = null
 
-[node name="MeshInstance15" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance15" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36491, -0.000377893, 4.53374 )
 mesh = SubResource( 4 )
 material/0 = null
 
-[node name="MeshInstance16" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance16" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76491, -0.000377893, 4.69192 )
 mesh = SubResource( 4 )
 material/0 = null
 
-[node name="MeshInstance3" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance17" type="MeshInstance" parent="second-floor2/second-floor-ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76491, -0.000377893, 4.69192 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16446, 0, 1.56499 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance4" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance4" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14118, 0, 4.56499 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance5" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance5" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16446, 0, 0.164992 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance6" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance6" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.36314, 0, -0.803938 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance7" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance7" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.36569, 0, -0.803938 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance8" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance8" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.41379, 0, -0.803938 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance9" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance9" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.953436, 0, -0.803938 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance14" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance14" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.33787, 0, 6.49606 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance13" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance13" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.36569, 0, 6.49606 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance12" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance12" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.41379, 0, 6.49606 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance11" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance11" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.953436, 0, 6.49606 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="MeshInstance10" type="MeshInstance" parent="second-floor2/second-floor"]
+[node name="MeshInstance10" type="MeshInstance" parent="second-floor2/second-floor-ground"]
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -432,6 +472,42 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1,
 [node name="low-poly-wall15" parent="second-floor2/wall-group-second-floor" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 1, 3.0147 )
 
+[node name="wall-group-room-1" type="Spatial" parent="second-floor2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.2147, 4.38804, 1.5 )
+
+[node name="low-poly-wall3" parent="second-floor2/wall-group-room-1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="low-poly-wall9" parent="second-floor2/wall-group-room-1" instance=ExtResource( 1 )]
+transform = Transform( -5.02681e-08, 0, -1, 0, 1, 0, 0.85, 0, -3.0598e-08, -0.463733, 0, 0.379119 )
+
+[node name="low-poly-wall8" parent="second-floor2/wall-group-room-1" instance=ExtResource( 1 )]
+transform = Transform( -6.11959e-08, 0, -1, 0, 1, 0, 0.6, 0, -8.74228e-09, -0.463734, 0, 2 )
+
+[node name="low-poly-wall7" parent="second-floor2/wall-group-room-1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.19209e-07 )
+
+[node name="low-poly-wall6" parent="second-floor2/wall-group-room-1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.19209e-07 )
+
+[node name="wall-group-room-2" type="Spatial" parent="second-floor2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.2147, 4.38804, -2.93626 )
+
+[node name="low-poly-wall3" parent="second-floor2/wall-group-room-2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="low-poly-wall7" parent="second-floor2/wall-group-room-2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.19209e-07 )
+
+[node name="low-poly-wall6" parent="second-floor2/wall-group-room-2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.19209e-07 )
+
+[node name="low-poly-wall4" parent="second-floor2/wall-group-room-2" instance=ExtResource( 1 )]
+transform = Transform( -5.02681e-08, 0, -1, 0, 1, 0, 0.85, 0, -3.0598e-08, 1.97253, 0, 0.379119 )
+
+[node name="low-poly-wall5" parent="second-floor2/wall-group-room-2" instance=ExtResource( 1 )]
+transform = Transform( -6.11959e-08, 0, -1, 0, 1, 0, 0.6, 0, -8.74228e-09, 1.97253, 0, 2 )
+
 [node name="toilet2-second-floor" type="Spatial" parent="second-floor2"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.9853, 4.38804, 1 )
 script = ExtResource( 6 )
@@ -449,6 +525,12 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7, 0,
 
 [node name="low-poly-wall5" parent="second-floor2/toilet2-second-floor" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7, 0, -2 )
+
+[node name="low-poly-wall11" parent="second-floor2/toilet2-second-floor" instance=ExtResource( 1 )]
+transform = Transform( 0.85, 0, 1.31134e-08, 0, 1, 0, 1.31134e-08, 0, 1, 2.17912, 0, -0.0362672 )
+
+[node name="low-poly-wall10" parent="second-floor2/toilet2-second-floor" instance=ExtResource( 1 )]
+transform = Transform( 0.69, 0, 2.71011e-08, 0, 1, 0, 2.71011e-08, 0, 1, 3.83627, 0, -0.036266 )
 
 [node name="wall-group7" type="Spatial" parent="second-floor2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, -0.1 )
@@ -531,17 +613,53 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 3.4147 )
 [node name="low-poly-wall5" parent="second-floor2/wall-group5" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3.4147 )
 
-[node name="inner-wall2" type="Spatial" parent="second-floor2"]
+[node name="inner-wall-room-3" type="Spatial" parent="second-floor2"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.2853, 4.4, -1 )
 script = ExtResource( 6 )
 start_from_translation = Vector3( 0, -3, 0 )
 show_and_animate_after_seconds = 8.7
 
-[node name="low-poly-wall3" parent="second-floor2/inner-wall2" instance=ExtResource( 1 )]
+[node name="low-poly-wall3" parent="second-floor2/inner-wall-room-3" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, 0, 2.38419e-07 )
 
-[node name="low-poly-wall6" parent="second-floor2/inner-wall2" instance=ExtResource( 1 )]
+[node name="low-poly-wall6" parent="second-floor2/inner-wall-room-3" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, 1.19209e-07 )
 
-[node name="low-poly-wall7" parent="second-floor2/inner-wall2" instance=ExtResource( 1 )]
+[node name="low-poly-wall7" parent="second-floor2/inner-wall-room-3" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="low-poly-wall9" parent="second-floor2/inner-wall-room-3" instance=ExtResource( 1 )]
+transform = Transform( -5.02681e-08, 0, -1, 0, 1, 0, 0.85, 0, -3.0598e-08, 0.036267, -0.01196, 0.479119 )
+
+[node name="low-poly-wall8" parent="second-floor2/inner-wall-room-3" instance=ExtResource( 1 )]
+transform = Transform( -5.72619e-08, 0, -1, 0, 1, 0, 0.69, 0, -1.66103e-08, 0.0362658, -0.01196, 2.13627 )
+
+[node name="window10" type="MeshInstance" parent="second-floor2"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0160531, 4.5, 3.5 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window9" type="MeshInstance" parent="second-floor2"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.116053, 4.5, -3.5 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window8" type="MeshInstance" parent="second-floor2"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.28395, 4.5, -3.5 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window11" type="MeshInstance" parent="second-floor2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.38395, 4.5, -1.19209e-07 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window12" type="MeshInstance" parent="second-floor2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.51605, 4.5, 0.3 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="window7" type="MeshInstance" parent="second-floor2"]
+transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, -2.18395, 4.5, 3.5 )
+mesh = SubResource( 6 )
+material/0 = null
