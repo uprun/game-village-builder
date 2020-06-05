@@ -1,8 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://ground2.tscn" type="PackedScene" id=1]
-[ext_resource path="res://grass-bush.tscn" type="PackedScene" id=2]
-[ext_resource path="res://DirectionalLight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script-build-process.gd" type="Script" id=1]
 [ext_resource path="res://low-poly-color-pallete/low-poly-gray-brown-1.material" type="Material" id=4]
 [ext_resource path="res://low-poly-color-pallete/low-poly-gray-1.material" type="Material" id=5]
 [ext_resource path="res://low-poly-color-pallete/low-poly-white-1.material" type="Material" id=6]
@@ -13,90 +11,118 @@ size = Vector3( 4, 0.1, 2 )
 
 [node name="low-poly-road-x-junction" type="Spatial"]
 
-[node name="ground2" parent="." instance=ExtResource( 1 )]
-visible = false
-
-[node name="grass-bush" parent="ground2" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3 )
-
-[node name="grass-bush2" parent="ground2" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3 )
-
-[node name="grass-bush3" parent="ground2" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4 )
-
-[node name="grass-bush4" parent="ground2" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05196, 0, 4.26444 )
-
-[node name="DirectionalLight" parent="." instance=ExtResource( 3 )]
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="road" type="MeshInstance" parent="."]
 transform = Transform( 1.98164, 0, 0, 0, 1, 0, 0, 0, 2, 1.0476, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance2" type="MeshInstance" parent="."]
+[node name="road2" type="MeshInstance" parent="."]
 transform = Transform( -8.66202e-08, 0, 2, 0, 1, 0, -1.98164, 0, -8.74228e-08, 0.0476, 0, -1.03372 )
 mesh = SubResource( 1 )
 material/0 = null
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance7" type="MeshInstance" parent="."]
-transform = Transform( 0.2, 0, 0, 0, 0.780277, 0, 0, 0, 0.05, 3, 0.0299366, 0 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 6 )
-
-[node name="MeshInstance6" type="MeshInstance" parent="."]
-transform = Transform( 0.2, 0, 0, 0, 0.780277, 0, 0, 0, 0.05, 4.23555, 0.0299366, 0 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 6 )
-
-[node name="MeshInstance20" type="MeshInstance" parent="."]
+[node name="pavement" type="MeshInstance" parent="."]
 transform = Transform( -3.28163e-08, 0, -0.5, 0, 1.75, 0, 0.75075, 0, -2.18557e-08, 2.42525, 0.1, -3.48021 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance23" type="MeshInstance" parent="."]
+[node name="pavement2" type="MeshInstance" parent="."]
 transform = Transform( 0.75075, 0, 0, 0, 1.75, 0, 0, 0, 0.5, 3.52099, 0.1, 2.44922 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance24" type="MeshInstance" parent="."]
+[node name="pavement3" type="MeshInstance" parent="."]
 transform = Transform( 0.75075, 0, 0, 0, 1.75, 0, 0, 0, 0.5, 0.52099, 0.1, 2.44922 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance30" type="MeshInstance" parent="."]
+[node name="pavement4" type="MeshInstance" parent="."]
 transform = Transform( 0.75075, 0, 0, 0, 1.75, 0, 0, 0, 0.5, -1.48396, 0.1, 2.44922 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance27" type="MeshInstance" parent="."]
+[node name="pavement5" type="MeshInstance" parent="."]
 transform = Transform( -3.28163e-08, 0, -0.5, 0, 1.75, 0, 0.75075, 0, -2.18557e-08, -2.47901, 0.1, -3.48021 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance28" type="MeshInstance" parent="."]
+[node name="pavement6" type="MeshInstance" parent="."]
 transform = Transform( -3.28163e-08, 0, -0.5, 0, 1.75, 0, 0.75075, 0, -2.18557e-08, -2.47901, 0.1, -0.48021 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance29" type="MeshInstance" parent="."]
+[node name="pavement7" type="MeshInstance" parent="."]
 transform = Transform( -3.28163e-08, 0, -0.5, 0, 1.75, 0, 0.75075, 0, -2.18557e-08, -2.47901, 0.1, 1.30514 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance25" type="MeshInstance" parent="."]
+[node name="pavement8" type="MeshInstance" parent="."]
 transform = Transform( 0.75075, 0, 0, 0, 1.75, 0, 0, 0, 0.5, 3.52099, 0.1, -2.48021 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, -0.3, 0 )
+progress_per_second = 100.0
 
-[node name="MeshInstance15" type="MeshInstance" parent="."]
+[node name="stripe" type="MeshInstance" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.780277, 0, 0, 0, 0.05, 3, 0.0299366, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 6 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.5
+
+[node name="stripe2" type="MeshInstance" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.780277, 0, 0, 0, 0.05, 4.23555, 0.0299366, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 6 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.5
+
+[node name="stripe3" type="MeshInstance" parent="."]
 transform = Transform( -8.74228e-09, 0, -0.05, 0, 0.780277, 0, 0.2, 0, -2.18557e-09, -0.0322249, 0.0299366, -4.26778 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 6 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.5
 
-[node name="MeshInstance14" type="MeshInstance" parent="."]
+[node name="stripe4" type="MeshInstance" parent="."]
 transform = Transform( -8.74228e-09, 0, -0.05, 0, 0.780277, 0, 0.2, 0, -2.18557e-09, -0.032225, 0.0299366, -3.03222 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 6 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.5
