@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://low-poly-color-pallete/low-poly-gray-1.material" type="Material" id=1]
+[ext_resource path="res://low-poly-color-pallete/low-poly-lillac-3.material" type="Material" id=2]
+[ext_resource path="res://script-road-block.gd" type="Script" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 1 )
+size = Vector3( 4, 0.15, 4 )
+
+[sub_resource type="CubeMesh" id=2]
+material = ExtResource( 2 )
+size = Vector3( 6, 0.07, 6 )
+
+[node name="road-block" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="road" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="buffer" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = null

@@ -14,4 +14,6 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if Input.is_key_pressed(KEY_ESCAPE):
+			get_node("/root/Script_global_variables").dictionary_road.clear()
 			get_tree().reload_current_scene()
+			
