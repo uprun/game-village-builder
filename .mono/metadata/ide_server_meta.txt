@@ -1,0 +1,2 @@
+﻿33151
+/home/uprun/IDEs/Godot_v3.2.1-mono/Godot

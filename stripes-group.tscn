@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://script-build-process.gd" type="Script" id=1]
+[ext_resource path="res://low-poly-color-pallete/low-poly-white-1.material" type="Material" id=2]
+[ext_resource path="res://low-poly-color-pallete/low-poly-gray-1.material" type="Material" id=3]
+[ext_resource path="res://script-stripes-group.gd" type="Script" id=4]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 3 )
+size = Vector3( 4, 0.1, 2 )
+
+[node name="stripes_group" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="stripe1" type="MeshInstance" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.780277, 0, 0, 0, 0.05, 1.8167, 0.0299366, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 2.4
+
+[node name="stripe2" type="MeshInstance" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.780277, 0, 0, 0, 0.05, 0.53555, 0.0299366, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 2.2
+
+[node name="stripe3" type="MeshInstance" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.780277, 0, 0, 0, 0.05, -0.7, 0.0299366, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 2.2
+
+[node name="stripe4" type="MeshInstance" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.780277, 0, 0, 0, 0.05, -1.8833, 0.0299366, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+script = ExtResource( 1 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 2.4

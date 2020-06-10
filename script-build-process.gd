@@ -20,6 +20,12 @@ func _ready() -> void:
 	visible = false
 	start_from_translation = initial_translation + start_from_translation
 
+func reset_time_passed() -> void:
+	time_passed = 0
+	visible = false
+	start_from_translation = initial_translation + start_from_translation
+	progress = 0
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

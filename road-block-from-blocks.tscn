@@ -1,0 +1,155 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://low-poly-color-pallete/low-poly-gray-1.material" type="Material" id=1]
+[ext_resource path="res://script-road-block-from-blocks.gd" type="Script" id=2]
+[ext_resource path="res://script-build-process.gd" type="Script" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 1 )
+size = Vector3( 1, 0.15, 1 )
+
+[node name="road-block-from-blocks" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="road-tile" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.3
+
+[node name="road-tile10" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.1
+
+[node name="road-tile2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+
+[node name="road-tile12" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.2
+
+[node name="road-tile4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 1.4
+
+[node name="road-tile3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.7
+
+[node name="road-tile8" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.4
+
+[node name="road-tile7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 1.5
+
+[node name="road-tile6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.5
+
+[node name="road-tile5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.6
+
+[node name="road-tile11" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 1.3
+
+[node name="road-tile9" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.8
+
+[node name="road-tile16" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 1.1
+
+[node name="road-tile15" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 1.2
+
+[node name="road-tile14" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 1.0
+
+[node name="road-tile13" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5 )
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 3 )
+start_from_translation = Vector3( 0, 2, 0 )
+progress_per_second = 200.0
+show_and_animate_after_seconds = 0.9
