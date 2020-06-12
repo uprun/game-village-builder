@@ -30,8 +30,12 @@ func _input(event: InputEvent) -> void:
 		
 		var data = (event as InputEventMouseButton)
 		print(data.to_string())
-		if data.pressed and data.button_index == 1:
-			pass
+		if data.pressed and data.button_index == 5:
+			length += 1.0
+			length = min(length, 20)
+		if data.pressed and data.button_index == 4:
+			length -= 1.0
+			length = max(length, 2)
 	if event is InputEventMouseMotion:
 		var data = (event as InputEventMouseMotion)
 		print(event.relative, event.button_mask)
@@ -46,3 +50,4 @@ func _input(event: InputEvent) -> void:
 			degrees_from_plane = max(-80, degrees_from_plane)
 			degrees_from_plane = min(-10, degrees_from_plane)
 			around_y_rotation_degress -= event.relative.x
+		
