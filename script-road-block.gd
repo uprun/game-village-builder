@@ -29,7 +29,8 @@ func checkNeighborRoad(a: int, b: int) -> bool:
 	return result
 
 func triggerBuildingOfNeighborRoad(a: int, b: int) -> void:
-	global_variables.dictionary_road[Vector2(a,b)] = true
+	if checkNeighborRoad(a,b):
+		global_variables.dictionary_road[Vector2(a,b)] = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

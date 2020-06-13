@@ -1,16 +1,16 @@
 extends Camera
 
-var target = Vector3.ZERO
+var target: Vector3
 var rotated_up = Vector3(0,0, -1)
 var some = Vector3(0,0,1)
-var length = 4.0
+var length = 20.0
 var around_y_rotation_degress = 0.0
-var degrees_from_plane = -80.0
+var degrees_from_plane = -70.0
 # Declare member variables here. Examples:
 # var a: int = 2
 # var b: String = "text"
 func _init() -> void:
-	look_at(target, rotated_up)
+	target = Vector3(translation.x, 0, translation.z - 4)
 
 func update_position() -> void:
 	var rot_x = (some *length ).rotated(Vector3(1, 0, 0), deg2rad(degrees_from_plane))
@@ -29,7 +29,6 @@ func _input(event: InputEvent) -> void:
 		
 		
 		var data = (event as InputEventMouseButton)
-		print(data.to_string())
 		if data.pressed and data.button_index == 5:
 			length += 1.0
 			length = min(length, 20)
@@ -38,7 +37,6 @@ func _input(event: InputEvent) -> void:
 			length = max(length, 2)
 	if event is InputEventMouseMotion:
 		var data = (event as InputEventMouseMotion)
-		print(event.relative, event.button_mask)
 		if event.button_mask == 1:
 			event.relative /= 100.0
 			var shift = Vector3(event.relative.x, 0, event.relative.y)
