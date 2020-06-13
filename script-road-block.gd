@@ -73,7 +73,7 @@ func _process(delta: float) -> void:
 			eligable_for_stripes = true
 			if check_z:
 				#rotate to properly orient
-				rotate_y(deg2rad(90))
+				rotation.y = deg2rad(90)
 			
 	if should_check_dictionary_of_roads and global_variables.dictionary_road[key]:
 		should_check_dictionary_of_roads = false
@@ -90,3 +90,22 @@ func _process(delta: float) -> void:
 			triggerBuildingOfNeighborRoad(x + 1, z)
 			triggerBuildingOfNeighborRoad(x, z - 1)
 			triggerBuildingOfNeighborRoad(x, z + 1)
+	var check_x = checkNeighborRoad(x - 1, z ) or checkNeighborRoad(x + 1, z )
+	var check_z = checkNeighborRoad(x, z - 1) or checkNeighborRoad(x, z + 1 )
+	if check_z:
+		#rotate to properly orient
+		rotation.y = deg2rad(90)
+	else:
+		rotation.y = deg2rad(0)
+	if  check_x and check_z or (check_x == false and check_z == false):
+		#junction
+		if eligable_for_stripes:
+			eligable_for_stripes = false
+			$stripes_group.reverse_animation(3.0)
+	else:
+		#road
+		if eligable_for_stripes == false:
+			$stripes_group.show()
+			$stripes_group.reset_animation()
+			$stripes_group.set_time(2.0)
+			eligable_for_stripes = true

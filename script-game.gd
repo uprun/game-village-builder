@@ -34,6 +34,17 @@ func checkIfThereIsARoadToAttachTo(a: int, b: int) -> bool:
 	var isOnX = x1 or x2
 	return (isOnX and (isOnZ == false)) or ((isOnX == false) and isOnZ)
 	
+func removeRoadBlock(ix: int, iz: int) -> void:
+	var child_nodes = get_children()
+	for nodeMaybeRoad in child_nodes:
+		if nodeMaybeRoad.name.begins_with("road-block"):
+			var check_ix = snapToGridIndex4(nodeMaybeRoad.translation.x)
+			var check_iz = snapToGridIndex4(nodeMaybeRoad.translation.z)
+			if check_ix == ix and check_iz == iz:
+				nodeMaybeRoad.queue_free()
+				global_variables.dictionary_road.erase(Vector2(ix,iz))
+				$"road-remove".hide()
+	
 
 func getMouseClick3d(data: InputEventMouse) -> Dictionary:
 	var ray_length = 1000
@@ -61,7 +72,7 @@ func _input(event: InputEvent) -> void:
 				var ix = snapToGridIndex4(clickResult.position.x)
 				var iz = snapToGridIndex4(clickResult.position.z)
 				if checkNeighborRoad(ix, iz):
-					print('to delete')
+					removeRoadBlock(ix, iz)
 				else:
 					if checkIfThereIsARoadToAttachTo(ix, iz):
 						var x = clickResult.position.x
@@ -71,7 +82,7 @@ func _input(event: InputEvent) -> void:
 						var snappedPosition = Vector3(x, 0, z)
 						var road_block_instance = scene_road_block.instance()
 						road_block_instance.translation =  snappedPosition
-						get_node("/root/game").add_child(road_block_instance)
+						get_node("/root/game").add_child(road_block_instance, true)
 						
 						$"road-add".hide()
 			pass
