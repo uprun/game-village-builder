@@ -74,7 +74,7 @@ func _input(event: InputEvent) -> void:
 				if checkNeighborRoad(ix, iz):
 					removeRoadBlock(ix, iz)
 				else:
-					if checkIfThereIsARoadToAttachTo(ix, iz):
+					if checkIfThereIsARoadToAttachTo(ix, iz) or global_variables.dictionary_road.empty():
 						var x = clickResult.position.x
 						var z = clickResult.position.z
 						x =  snapToGridPosition4(x)
@@ -105,7 +105,7 @@ func _input(event: InputEvent) -> void:
 				$"road-remove".translation = snappedPosition
 				$"road-remove".show()
 			else:
-				if checkIfThereIsARoadToAttachTo(ix, iz):
+				if checkIfThereIsARoadToAttachTo(ix, iz) or global_variables.dictionary_road.empty():
 					$"road-add".translation = snappedPosition
 					$"road-add".show()
 				
