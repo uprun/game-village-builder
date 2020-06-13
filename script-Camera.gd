@@ -31,14 +31,14 @@ func _input(event: InputEvent) -> void:
 		var data = (event as InputEventMouseButton)
 		if data.pressed and data.button_index == 5:
 			length += 1.0
-			length = min(length, 20)
+			length = min(length, 40)
 		if data.pressed and data.button_index == 4:
 			length -= 1.0
 			length = max(length, 2)
 	if event is InputEventMouseMotion:
 		var data = (event as InputEventMouseMotion)
 		if event.button_mask == 1:
-			event.relative /= 100.0
+			event.relative *= length/1000.0
 			var shift = Vector3(event.relative.x, 0, event.relative.y)
 			shift = shift.rotated(Vector3(0,1,0), deg2rad(around_y_rotation_degress))
 			target -= shift

@@ -55,7 +55,7 @@ func _input(event: InputEvent) -> void:
 		
 		
 		var data = (event as InputEventMouseButton)
-		if data.pressed == false and data.button_index == 1:
+		if data.doubleclick and data.button_index == 1:
 			var clickResult = getMouseClick3d(data)
 			if clickResult:
 				var ix = snapToGridIndex4(clickResult.position.x)
@@ -78,20 +78,23 @@ func _input(event: InputEvent) -> void:
 		if data.pressed and data.button_index == 4:
 			pass
 	if event is InputEventMouseMotion:
+		$"road-remove".hide()
+		$"road-add".hide()
 		var data = (event as InputEventMouseMotion)
 		var clickResult = getMouseClick3d(data)
 		if clickResult:
 			var ix = snapToGridIndex4(clickResult.position.x)
 			var iz = snapToGridIndex4(clickResult.position.z)
+			var x = clickResult.position.x
+			var z = clickResult.position.z
+			x =  snapToGridPosition4(x)
+			z =  snapToGridPosition4(z)
+			var snappedPosition = Vector3(x, 0, z)
 			if checkNeighborRoad(ix, iz):
-				print('to delete')
+				$"road-remove".translation = snappedPosition
+				$"road-remove".show()
 			else:
 				if checkIfThereIsARoadToAttachTo(ix, iz):
-					var x = clickResult.position.x
-					var z = clickResult.position.z
-					x =  snapToGridPosition4(x)
-					z =  snapToGridPosition4(z)
-					var snappedPosition = Vector3(x, clickResult.position.y, z)
 					$"road-add".translation = snappedPosition
 					$"road-add".show()
 				
