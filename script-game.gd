@@ -7,9 +7,46 @@ extends Spatial
 var global_variables: Node
 onready var scene_road_block = preload("res://road-block.tscn")
 
+
+func save_to_file() -> void:
+	print("save")
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	var key = 0
+	var toSave = {}
+	for road in global_variables.dictionary_road:
+		toSave[key] = {"x": road.x, "y": road.y}
+		key += 1
+	
+	var to_save = to_json(toSave)
+	save_game.store_line(to_save)
+	save_game.close()
+	
+func load_from_file() -> void:
+	print("load")
+	var save_game = File.new()
+	if save_game.file_exists("user://savegame.save"):
+		save_game.open("user://savegame.save", File.READ)
+		while save_game.get_position() < save_game.get_len():
+			# Get the saved dictionary from the next line in the save file
+			var node_data = parse_json(save_game.get_line())
+			for key in node_data:
+				var data = node_data[key]
+				var x = data.x
+				var z = data.y
+				if not checkNeighborRoad(x,z):
+					x =  fromIndexToPosition4(x)
+					z =  fromIndexToPosition4(z)
+					var snappedPosition = Vector3(x, 0, z)
+					var road_block_instance = scene_road_block.instance()
+					road_block_instance.translation =  snappedPosition
+					get_node("/root/game").add_child(road_block_instance, true)
+		save_game.close()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	global_variables = get_node("/root/Script_global_variables")
+	load_from_file()
 	
 func snapToGridIndex4(pos: float) -> float:
 	var base = 4
@@ -60,46 +97,13 @@ func getMouseClick3d(data: InputEventMouse) -> Dictionary:
 	var result = space_state.intersect_ray(from, to, [self], 0x1)
 	return result
 
+
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if Input.is_key_pressed(KEY_ESCAPE):
 			get_node("/root/Script_global_variables").dictionary_road.clear()
 			get_tree().reload_current_scene()
-		if Input.is_key_pressed(KEY_F1):
-			print("save")
-			var save_game = File.new()
-			save_game.open("user://savegame.save", File.WRITE)
-			var key = 0
-			var toSave = {}
-			for road in global_variables.dictionary_road:
-				toSave[key] = {"x": road.x, "y": road.y}
-				key += 1
-			
-			var to_save = to_json(toSave)
-			print(to_save)
-			save_game.store_line(to_save)
-			save_game.close()
-		if Input.is_key_pressed(KEY_F2):
-			print("load")
-			var save_game = File.new()
-			if save_game.file_exists("user://savegame.save"):
-				save_game.open("user://savegame.save", File.READ)
-				while save_game.get_position() < save_game.get_len():
-					# Get the saved dictionary from the next line in the save file
-					var node_data = parse_json(save_game.get_line())
-					print(node_data)
-					for key in node_data:
-						var data = node_data[key]
-						var x = data.x
-						var z = data.y
-						if not checkNeighborRoad(x,z):
-							x =  fromIndexToPosition4(x)
-							z =  fromIndexToPosition4(z)
-							var snappedPosition = Vector3(x, 0, z)
-							var road_block_instance = scene_road_block.instance()
-							road_block_instance.translation =  snappedPosition
-							get_node("/root/game").add_child(road_block_instance, true)
-				save_game.close()
 	
 	if event is InputEventMouseButton:
 		
@@ -112,6 +116,7 @@ func _input(event: InputEvent) -> void:
 				var iz = snapToGridIndex4(clickResult.position.z)
 				if checkNeighborRoad(ix, iz):
 					removeRoadBlock(ix, iz)
+					save_to_file()
 				else:
 					if checkIfThereIsARoadToAttachTo(ix, iz) or global_variables.dictionary_road.empty():
 						var x = clickResult.position.x
@@ -122,8 +127,8 @@ func _input(event: InputEvent) -> void:
 						var road_block_instance = scene_road_block.instance()
 						road_block_instance.translation =  snappedPosition
 						get_node("/root/game").add_child(road_block_instance, true)
-						
 						$"road-add".hide()
+						save_to_file()
 			pass
 		if data.pressed and data.button_index == 4:
 			pass
