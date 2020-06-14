@@ -1,0 +1,8 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://fonts/8-bit-operator/8bitOperatorPlus8-Regular.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 23
+outline_color = Color( 0.415686, 0.321569, 0.321569, 1 )
+font_data = ExtResource( 1 )

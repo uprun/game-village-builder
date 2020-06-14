@@ -102,8 +102,7 @@ func getMouseClick3d(data: InputEventMouse) -> Dictionary:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if Input.is_key_pressed(KEY_ESCAPE):
-			get_node("/root/Script_global_variables").dictionary_road.clear()
-			get_tree().reload_current_scene()
+			pass
 	
 	if event is InputEventMouseButton:
 		
@@ -157,3 +156,8 @@ func _input(event: InputEvent) -> void:
 			pass
 		if event.button_mask == 2:
 			pass
+
+
+func _on_Button_pressed() -> void:
+	get_node("/root/Script_global_variables").dictionary_road.clear()
+	get_tree().reload_current_scene()
