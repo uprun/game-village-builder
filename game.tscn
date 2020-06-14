@@ -162,7 +162,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5535, 0.0298223, 6.77442 )
 
 [node name="low-poly-house-attempt-1" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11, 0, 1 )
-visible = false
 
 [node name="road-block" parent="." instance=ExtResource( 12 )]
 
