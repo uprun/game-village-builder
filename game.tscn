@@ -187,9 +187,9 @@ margin_top = 33.0
 margin_right = 292.0
 margin_bottom = 87.0
 custom_fonts/font = SubResource( 1 )
-text = "F1 - save
-F2 - load
-double click - action"
+text = "ESC - restart animation
+double click - action
+auto-save is enabled"
 __meta__ = {
 "_edit_use_anchors_": false
 }
