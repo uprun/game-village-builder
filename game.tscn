@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ground2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://grass-bush.tscn" type="PackedScene" id=2]
-[ext_resource path="res://house.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/8-bit-operator/8bitOperatorPlus8-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://low-poly-house-attempt-1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tree.tscn" type="PackedScene" id=5]
 [ext_resource path="res://DirectionalLight.tscn" type="PackedScene" id=6]
@@ -11,6 +11,11 @@
 [ext_resource path="res://road-remove.tscn" type="PackedScene" id=9]
 [ext_resource path="res://script-game.gd" type="Script" id=11]
 [ext_resource path="res://road-block.tscn" type="PackedScene" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+outline_color = Color( 0.415686, 0.321569, 0.321569, 1 )
+font_data = ExtResource( 3 )
 
 [node name="game" type="Spatial"]
 script = ExtResource( 11 )
@@ -57,12 +62,6 @@ directional_shadow_normal_bias = 0.0
 directional_shadow_bias_split_scale = 0.17
 directional_shadow_depth_range = 1
 directional_shadow_max_distance = 156.2
-
-[node name="house" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4, 0, 14.9 )
-
-[node name="house2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4, 0, 19.9 )
 
 [node name="tree000" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.0517638, 0, 0.193185, 0, 0.2, 0, -0.193185, 0, 0.0517638, 5, 0.00659752, 0 )
@@ -181,3 +180,16 @@ visible = false
 [node name="road-remove" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 18 )
 visible = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = 36.0
+margin_top = 33.0
+margin_right = 292.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 1 )
+text = "F1 - save
+F2 - load
+double click - action"
+__meta__ = {
+"_edit_use_anchors_": false
+}
